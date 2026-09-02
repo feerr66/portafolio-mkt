@@ -1,0 +1,208 @@
+/* ==========================================================
+   1. RESET Y ESTILOS GLOBALES
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Evita que el padding rompa el ancho de los elementos */
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f1f3f9;
+    /* Color de fondo gris/azul claro suave */
+    color: #1e293b;
+
+    /* MAGIA PARA CENTRAR TODO EN PANTALLA CON FLEXBOX */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    min-height: 100vh;
+    /* Asegura que el body use al menos el 100% del alto visible */
+    padding: 20px;
+    /* Margen para que no toque los bordes en pantallas chicas */
+}
+
+/* ==========================================================
+   2. LA TARJETA (CARD)
+   ========================================================== */
+.card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 580px;
+    /* Ancho máximo en computadores */
+    border-radius: 24px;
+    /* Esquinas bien redondeadas */
+    padding: 40px 48px;
+    /* Espaciado interno */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+    text-align: center;
+    position: relative;
+}
+
+/* ==========================================================
+   3. NAVEGACIÓN SUPERIOR
+   ========================================================== */
+.nav-menu ul {
+    list-style: none;
+    /* Quita los puntos de la lista */
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea el menú a la derecha */
+    gap: 24px;
+    /* Separación entre cada enlace */
+    margin-bottom: 24px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    /* Quita el subrayado azul por defecto */
+    color: #64748b;
+    /* Gris elegante */
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #1e293b;
+}
+
+/* El enlace activo ("Inicio") con la barrita azul abajo */
+.nav-menu a.active {
+    color: #0f172a;
+    font-weight: 700;
+    border-bottom: 3px solid #5b5bd6;
+    border-radius: 2px;
+}
+
+/* ==========================================================
+   4. FOTO DE PERFIL / AVATAR
+   ========================================================== */
+.avatar-wrapper {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 24px auto;
+    /* Centra la caja y da margen abajo */
+    border-radius: 50%;
+    /* Hace que el contenedor sea circular */
+    padding: 6px;
+    /* Espacio para el aro exterior */
+    background: linear-gradient(180deg, #e0e7ff 0%, #e2e8f0 100%);
+    /* Aro decorativo suave */
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Evita que la foto se estire o deforme */
+    display: block;
+}
+
+/* ==========================================================
+   5. NOMBRE, ROL Y BIOGRAFÍA
+   ========================================================== */
+.name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    /* Azul muy oscuro, casi negro */
+    margin-bottom: 8px;
+}
+
+.role {
+    font-size: 16px;
+    font-weight: 500;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* Línea decorativa corta debajo del rol */
+.divider {
+    width: 48px;
+    height: 3px;
+    background-color: #cbd5e1;
+    border-radius: 2px;
+    margin: 0 auto 24px auto;
+    /* Centrado horizontal */
+}
+
+.bio {
+    font-size: 14.5px;
+    line-height: 1.6;
+    /* Altura de línea para que sea muy legible */
+    color: #475569;
+    margin-bottom: 32px;
+}
+
+/* ==========================================================
+   6. BOTONES SOCIALES
+   ========================================================== */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    /* Coloca un botón encima del otro */
+    gap: 12px;
+    /* Separación entre botones */
+    max-width: 320px;
+    margin: 0 auto;
+    /* Centra el bloque de botones */
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1.5px solid #dbe4f0;
+    border-radius: 12px;
+    padding: 12px 20px;
+    color: #1e293b;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    /* Transición suave al pasar el mouse */
+}
+
+.btn-social i,
+.btn-social svg {
+    width: 20px;
+    height: 20px;
+    color: #4f46e5;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+/* Efecto hover cuando el usuario pasa el cursor por encima */
+.btn-social:hover {
+    border-color: #6366f1;
+    background-color: #f8faff;
+    transform: translateY(-2px);
+    /* Pequeño salto hacia arriba */
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+}
+
+/* ==========================================================
+   7. ADAPTACIÓN PARA CELULARES (RESPONSIVE)
+   ========================================================== */
+@media (max-width: 480px) {
+    .card {
+        padding: 30px 20px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .bio {
+        font-size: 13.5px;
+    }
+}
