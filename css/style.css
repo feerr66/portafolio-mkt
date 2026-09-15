@@ -1,99 +1,116 @@
 /* ==========================================================
-   1. RESET Y ESTILOS GLOBALES
+   1. VARIABLES DE COLOR (Paleta sutil en tonos azules y neutros)
+   ========================================================== */
+:root {
+    --bg-page: #f1f5f9;            /* Fondo suave pizarra/azul claro */
+    --bg-card: #ffffff;            /* Fondo blanco puro de la tarjeta */
+    
+    --primary: #1d4ed8;            /* Azul marino elegante principal */
+    --primary-hover: #1e3a8a;      /* Azul marino profundo al pasar el cursor */
+    --primary-light: #eff6ff;      /* Fondo azul muy clarito */
+    
+    --text-title: #0f172a;         /* Azul marino muy oscuro para títulos */
+    --text-body: #334155;          /* Texto legible gris azulado */
+    --text-muted: #64748b;         /* Gris suave para subtítulos */
+    
+    --border-color: #e2e8f0;       /* Bordes y divisores sutiles */
+    --border-hover: #cbd5e1;       /* Bordes en hover */
+    
+    --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.02);
+}
+
+/* ==========================================================
+   2. RESET Y ESTILOS GLOBALES
    ========================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Evita que el padding rompa el ancho de los elementos */
 }
 
 body {
     font-family: 'Outfit', sans-serif;
-    background-color: #f1f3f9;
-    /* Color de fondo gris/azul claro suave */
-    color: #1e293b;
-
-    /* MAGIA PARA CENTRAR TODO EN PANTALLA CON FLEXBOX */
+    background-color: var(--bg-page);
+    color: var(--text-body);
     display: flex;
     justify-content: center;
-    /* Centra horizontalmente */
     align-items: center;
-    /* Centra verticalmente */
     min-height: 100vh;
-    /* Asegura que el body use al menos el 100% del alto visible */
-    padding: 20px;
-    /* Margen para que no toque los bordes en pantallas chicas */
+    padding: 24px 20px;
 }
 
 /* ==========================================================
-   2. LA TARJETA (CARD)
+   3. TARJETA CONTENEDORA (CARD)
    ========================================================== */
 .card {
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     width: 100%;
-    max-width: 580px;
-    /* Ancho máximo en computadores */
-    border-radius: 24px;
-    /* Esquinas bien redondeadas */
+    border-radius: 28px;
     padding: 40px 48px;
-    /* Espaciado interno */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
-    text-align: center;
+    box-shadow: var(--shadow-card);
     position: relative;
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    margin: auto;
+}
+
+/* Tamaños específicos por página */
+.card-home {
+    max-width: 580px;
+    text-align: center;
+}
+
+.card-projects {
+    max-width: 980px;
+    text-align: left;
+}
+
+.card-contact {
+    max-width: 860px;
+    text-align: left;
 }
 
 /* ==========================================================
-   3. NAVEGACIÓN SUPERIOR
+   4. NAVEGACIÓN SUPERIOR
    ========================================================== */
 .nav-menu ul {
     list-style: none;
-    /* Quita los puntos de la lista */
     display: flex;
     justify-content: flex-end;
-    /* Alinea el menú a la derecha */
     gap: 24px;
-    /* Separación entre cada enlace */
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .nav-menu a {
     text-decoration: none;
-    /* Quita el subrayado azul por defecto */
-    color: #64748b;
-    /* Gris elegante */
-    font-size: 14px;
+    color: var(--text-muted);
+    font-size: 14.5px;
     font-weight: 500;
-    padding-bottom: 4px;
+    padding-bottom: 5px;
     transition: color 0.2s ease;
 }
 
 .nav-menu a:hover {
-    color: #1e293b;
+    color: var(--text-title);
 }
 
-/* El enlace activo ("Inicio") con la barrita azul abajo */
+/* Enlace de la página activa (con barrita azul abajo) */
 .nav-menu a.active {
-    color: #0f172a;
+    color: var(--primary);
     font-weight: 700;
-    border-bottom: 3px solid #5b5bd6;
+    border-bottom: 3px solid var(--primary);
     border-radius: 2px;
 }
 
 /* ==========================================================
-   4. FOTO DE PERFIL / AVATAR
+   5. PÁGINA DE INICIO (index.html)
    ========================================================== */
 .avatar-wrapper {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 24px auto;
-    /* Centra la caja y da margen abajo */
+    width: 135px;
+    height: 135px;
+    margin: 0 auto 22px auto;
     border-radius: 50%;
-    /* Hace que el contenedor sea circular */
-    padding: 6px;
-    /* Espacio para el aro exterior */
+    padding: 5px;
     background: linear-gradient(180deg, #e0e7ff 0%, #e2e8f0 100%);
-    /* Aro decorativo suave */
 }
 
 .avatar-img {
@@ -101,58 +118,44 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    /* Evita que la foto se estire o deforme */
     display: block;
 }
 
-/* ==========================================================
-   5. NOMBRE, ROL Y BIOGRAFÍA
-   ========================================================== */
 .name {
     font-size: 28px;
     font-weight: 700;
-    color: #0f172a;
-    /* Azul muy oscuro, casi negro */
-    margin-bottom: 8px;
+    color: var(--text-title);
+    margin-bottom: 6px;
 }
 
 .role {
-    font-size: 16px;
+    font-size: 15.5px;
     font-weight: 500;
-    color: #475569;
-    margin-bottom: 20px;
+    color: var(--text-body);
+    margin-bottom: 18px;
 }
 
-/* Línea decorativa corta debajo del rol */
 .divider {
-    width: 48px;
+    width: 44px;
     height: 3px;
-    background-color: #cbd5e1;
+    background-color: var(--border-color);
     border-radius: 2px;
-    margin: 0 auto 24px auto;
-    /* Centrado horizontal */
+    margin: 0 auto 22px auto;
 }
 
 .bio {
     font-size: 14.5px;
     line-height: 1.6;
-    /* Altura de línea para que sea muy legible */
-    color: #475569;
-    margin-bottom: 32px;
+    color: var(--text-body);
+    margin-bottom: 30px;
 }
 
-/* ==========================================================
-   6. BOTONES SOCIALES
-   ========================================================== */
 .social-buttons {
     display: flex;
     flex-direction: column;
-    /* Coloca un botón encima del otro */
     gap: 12px;
-    /* Separación entre botones */
     max-width: 320px;
     margin: 0 auto;
-    /* Centra el bloque de botones */
 }
 
 .btn-social {
@@ -162,40 +165,511 @@ body {
     gap: 12px;
     text-decoration: none;
     background-color: #ffffff;
-    border: 1.5px solid #dbe4f0;
+    border: 1.5px solid var(--border-color);
     border-radius: 12px;
     padding: 12px 20px;
-    color: #1e293b;
+    color: var(--text-title);
     font-size: 15px;
     font-weight: 600;
     transition: all 0.25s ease;
-    /* Transición suave al pasar el mouse */
 }
 
 .btn-social i,
-.btn-social svg {
+.btn-social svg.lucide {
     width: 20px;
     height: 20px;
-    color: #4f46e5;
+    color: var(--primary);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2px;
+    flex-shrink: 0;
+}
+
+.btn-social svg.icon-social {
+    width: 20px;
+    height: 20px;
+    color: var(--primary);
     fill: currentColor;
     flex-shrink: 0;
 }
 
-/* Efecto hover cuando el usuario pasa el cursor por encima */
 .btn-social:hover {
-    border-color: #6366f1;
-    background-color: #f8faff;
+    border-color: var(--primary);
+    background-color: var(--primary-light);
     transform: translateY(-2px);
-    /* Pequeño salto hacia arriba */
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.14);
 }
 
 /* ==========================================================
-   7. ADAPTACIÓN PARA CELULARES (RESPONSIVE)
+   6. ENCABEZADO DE SECCIONES (Proyectos y Contacto)
    ========================================================== */
-@media (max-width: 480px) {
+.projects-header {
+    margin-bottom: 24px;
+}
+
+.projects-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-title);
+    line-height: 1.2;
+}
+
+.projects-title-bar {
+    width: 36px;
+    height: 3.5px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.projects-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================================
+   7. PÁGINA DE PROYECTOS (proyectos.html - Galería Visual)
+   ========================================================== */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.gallery-card {
+    background-color: #ffffff;
+    border: 1.5px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    border-color: #cbd5e1;
+    box-shadow: 0 16px 36px rgba(29, 78, 216, 0.1);
+}
+
+.gallery-card-media {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.gallery-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-img {
+    transform: scale(1.05);
+}
+
+.gallery-category-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.2px;
+}
+
+.gallery-category-badge i,
+.gallery-category-badge svg {
+    width: 12px;
+    height: 12px;
+    stroke-width: 2.2px;
+}
+
+.gallery-card-body {
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.gallery-card-title {
+    font-size: 17.5px;
+    font-weight: 700;
+    color: var(--text-title);
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.gallery-card-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+/* Botón interactivo para desplegar detalles */
+.btn-toggle-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 12px;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid rgba(29, 78, 216, 0.15);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 14px;
+}
+
+.btn-toggle-details:hover {
+    background-color: #dbeafe;
+    border-color: var(--primary);
+}
+
+.toggle-icon {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2.3px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-card.is-expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Contenedor de detalles colapsable */
+.gallery-card-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-bottom: 0;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease, margin 0.3s ease;
+}
+
+.gallery-card.is-expanded .gallery-card-details {
+    max-height: 400px;
+    opacity: 1;
+    margin-bottom: 14px;
+    transition: max-height 0.45s ease-in-out, opacity 0.35s ease;
+}
+
+.details-inner {
+    padding: 10px 0;
+    border-top: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.details-item {
+    font-size: 12.5px;
+    color: var(--text-body);
+    line-height: 1.45;
+}
+
+.details-item strong {
+    color: var(--text-title);
+    font-weight: 600;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.project-tag {
+    background-color: #f1f5f9;
+    color: var(--text-body);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.gallery-card-footer {
+    margin-top: auto;
+}
+
+.btn-canva-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    background-color: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 11px;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: all 0.22s ease;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.16);
+}
+
+.btn-canva-link:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.28);
+}
+
+.btn-canva-link i,
+.btn-canva-link svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2.2px;
+}
+
+/* ==========================================================
+   8. PÁGINA DE CONTACTO (contacto.html)
+   ========================================================== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text-title);
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3.5px rgba(29, 78, 216, 0.15);
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 6px;
+    width: 100%;
+}
+
+.btn-submit i,
+.btn-submit svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2.2px;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.28);
+}
+
+/* Columna derecha: Ilustración y Caja de Correo */
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.contact-illustration {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.contact-card-box {
+    width: 100%;
+    background-color: #f6f8fd;
+    border: 1px solid #e7edf8;
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.contact-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e6edff;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-card-icon i,
+.contact-card-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2px;
+}
+
+.contact-card-text {
+    font-size: 13.5px;
+    color: var(--text-muted);
+}
+
+.contact-card-title {
+    font-weight: 600;
+    color: var(--text-title);
+    margin-bottom: 2px;
+}
+
+.contact-card-email {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.contact-card-email:hover {
+    text-decoration: underline;
+}
+
+.contact-card-note {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ==========================================================
+   9. ADAPTACIÓN PARA CELULARES Y TABLETS (RESPONSIVE)
+   ========================================================== */
+@media (max-width: 992px) {
+    .card-projects {
+        max-width: 780px;
+    }
+
+    .projects-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
     .card {
-        padding: 30px 20px;
+        padding: 32px 24px;
+    }
+
+    .projects-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-card-media {
+        height: 200px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .contact-right {
+        order: -1; /* Muestra la ilustración arriba en celulares */
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    .card {
+        padding: 24px 18px;
+    }
+
+    .nav-menu ul {
+        gap: 16px;
+        justify-content: center;
     }
 
     .name {
@@ -204,5 +678,9 @@ body {
 
     .bio {
         font-size: 13.5px;
+    }
+
+    .projects-title {
+        font-size: 26px;
     }
 }
