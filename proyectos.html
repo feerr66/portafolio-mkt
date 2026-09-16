@@ -14,16 +14,19 @@
     <!-- Íconos vectoriales modernos (Lucide Icons) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Librería de animaciones AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
     <!-- Hoja de estilos CSS compartida -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- CAJA PRINCIPAL: Tarjeta de proyectos con diseño estilo Galería Visual -->
-    <main class="card card-projects">
+    <!-- CAJA PRINCIPAL: Tarjeta de proyectos -->
+    <main class="card card-projects" data-aos="fade-up">
 
-        <!-- 1. NAVEGACIÓN SUPERIOR COMÚN -->
+        <!-- 1. Menú de navegación superior (con 'Proyectos' activo) -->
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -32,160 +35,64 @@
             </ul>
         </nav>
 
-        <!-- 2. ENCABEZADO DE LA SECCIÓN -->
+        <!-- 2. Encabezado con título, barrita decorativa y subtítulo -->
         <header class="projects-header">
             <h1 class="projects-title">Mis proyectos</h1>
             <div class="projects-title-bar"></div>
             <p class="projects-subtitle">Explora una selección de mis trabajos en marketing digital, diseño y estrategias.</p>
         </header>
 
-        <!-- 3. GALERÍA VISUAL DE PROYECTOS -->
-        <section class="projects-gallery">
+        <!-- 3. Lista de proyectos con animaciones de entrada -->
+        <section class="projects-list">
 
             <!-- PROYECTO 1 -->
-            <article class="gallery-card">
-                <div class="gallery-card-media">
-                    <img src="img/proyecto1.png" alt="Vista previa del Análisis Index" class="gallery-card-img">
-                    <span class="gallery-category-badge">
-                        <i data-lucide="compass"></i>
-                        <span>Plan de Marketing / Estrategia</span>
-                    </span>
-                </div>
-                <div class="gallery-card-body">
-                    <h2 class="gallery-card-title">Análisis "Index"</h2>
-                    <p class="gallery-card-desc">
+            <article class="project-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-info">
+                    <h2 class="project-name">Análisis "Index"</h2>
+                    <p class="project-desc">
                         Diagnóstico estratégico y análisis de posicionamiento de marca para optimizar el alcance digital y la propuesta de valor.
                     </p>
-
-                    <!-- Botón para desplegar detalles -->
-                    <button type="button" class="btn-toggle-details" aria-expanded="false" aria-label="Mostrar más información del proyecto">
-                        <span>Ver más detalles</span>
-                        <i data-lucide="chevron-down" class="toggle-icon"></i>
-                    </button>
-
-                    <!-- Sección colapsable con detalles extendidos -->
-                    <div class="gallery-card-details">
-                        <div class="details-inner">
-                            <p class="details-item">
-                                <strong>Enfoque clave:</strong> Auditoría de marca, análisis de competencia (Benchmarking) y diagnóstico FODA.
-                            </p>
-                            <p class="details-item">
-                                <strong>Entregables:</strong> Propuesta estratégica comercial, definición de buyer personas y hoja de ruta.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Estrategia</span>
-                                <span class="project-tag">Benchmarking</span>
-                                <span class="project-tag">FODA</span>
-                                <span class="project-tag">Canva</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Enlace directo a Canva -->
-                    <div class="gallery-card-footer">
-                        <a href="https://www.canva.com/design/DAHPYKmhClk/kwcgn0FLvCJjh1_HuDOGQA/edit" target="_blank" rel="noopener noreferrer" class="btn-canva-link">
-                            <span>Ver presentación en Canva</span>
-                            <i data-lucide="external-link"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.canva.com/design/DAHPYKmhClk/kwcgn0FLvCJjh1_HuDOGQA/edit" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <span>Ver presentación</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="project-image-wrapper">
+                    <img src="img/proyecto1.png" alt="Vista previa del Análisis Index" class="project-img">
                 </div>
             </article>
 
             <!-- PROYECTO 2 -->
-            <article class="gallery-card">
-                <div class="gallery-card-media">
-                    <img src="img/proyecto2.png" alt="Vista previa del Plan de Marketing Mercado Libre" class="gallery-card-img">
-                    <span class="gallery-category-badge">
-                        <i data-lucide="share-2"></i>
-                        <span>Social Media / Gestión de RRSS</span>
-                    </span>
-                </div>
-                <div class="gallery-card-body">
-                    <h2 class="gallery-card-title">Plan de Marketing "Mercado Libre"</h2>
-                    <p class="gallery-card-desc">
+            <article class="project-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-info">
+                    <h2 class="project-name">Plan de Marketing "Mercado Libre"</h2>
+                    <p class="project-desc">
                         Estrategia integral de comunicación y redes sociales orientada a potenciar el engagement, alcance y conversión de audiencia.
                     </p>
-
-                    <!-- Botón para desplegar detalles -->
-                    <button type="button" class="btn-toggle-details" aria-expanded="false" aria-label="Mostrar más información del proyecto">
-                        <span>Ver más detalles</span>
-                        <i data-lucide="chevron-down" class="toggle-icon"></i>
-                    </button>
-
-                    <!-- Sección colapsable con detalles extendidos -->
-                    <div class="gallery-card-details">
-                        <div class="details-inner">
-                            <p class="details-item">
-                                <strong>Enfoque clave:</strong> Calendario de contenidos omnicanal, redacción publicitaria y engagement de comunidad.
-                            </p>
-                            <p class="details-item">
-                                <strong>Entregables:</strong> Parrilla de contenidos mensuales, plantillas visuales y panel de KPIs.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Social Media</span>
-                                <span class="project-tag">Content Plan</span>
-                                <span class="project-tag">KPIs</span>
-                                <span class="project-tag">Copywriting</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Enlace directo a Canva -->
-                    <div class="gallery-card-footer">
-                        <a href="https://www.canva.com/design/DAHNUDz5yVk/axhdsFMUHIhM0OLLHrQE_Q/edit" target="_blank" rel="noopener noreferrer" class="btn-canva-link">
-                            <span>Ver presentación en Canva</span>
-                            <i data-lucide="external-link"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.canva.com/design/DAHNUDz5yVk/axhdsFMUHIhM0OLLHrQE_Q/edit" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <span>Ver presentación</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="project-image-wrapper">
+                    <img src="img/proyecto2.png" alt="Vista previa del Plan de Marketing Mercado Libre" class="project-img">
                 </div>
             </article>
 
             <!-- PROYECTO 3 -->
-            <article class="gallery-card">
-                <div class="gallery-card-media">
-                    <img src="img/proyecto3.png" alt="Vista previa del Plan de Marketing Helados York" class="gallery-card-img">
-                    <span class="gallery-category-badge">
-                        <i data-lucide="layers"></i>
-                        <span>Métodos Marketing</span>
-                    </span>
-                </div>
-                <div class="gallery-card-body">
-                    <h2 class="gallery-card-title">Plan de Marketing "Helados York"</h2>
-                    <p class="gallery-card-desc">
+            <article class="project-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-info">
+                    <h2 class="project-name">Plan de Marketing "Helados York"</h2>
+                    <p class="project-desc">
                         Metodologías de marketing mix y tácticas de promoción diseñadas para impulsar el reconocimiento de marca y fidelización.
                     </p>
-
-                    <!-- Botón para desplegar detalles -->
-                    <button type="button" class="btn-toggle-details" aria-expanded="false" aria-label="Mostrar más información del proyecto">
-                        <span>Ver más detalles</span>
-                        <i data-lucide="chevron-down" class="toggle-icon"></i>
-                    </button>
-
-                    <!-- Sección colapsable con detalles extendidos -->
-                    <div class="gallery-card-details">
-                        <div class="details-inner">
-                            <p class="details-item">
-                                <strong>Enfoque clave:</strong> Aplicación de las 4Ps del marketing, análisis de mercado y segmentación de clientes.
-                            </p>
-                            <p class="details-item">
-                                <strong>Entregables:</strong> Estrategia promocional, plan de atracción de nuevos clientes y propuesta de valor.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Marketing Mix</span>
-                                <span class="project-tag">Segmentación</span>
-                                <span class="project-tag">Fidelización</span>
-                                <span class="project-tag">Branding</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Enlace directo a Canva -->
-                    <div class="gallery-card-footer">
-                        <a href="https://www.canva.com/design/DAHO7sI-Rek/Bd5SrFLWePbwLEfzHbOOrQ/edit" target="_blank" rel="noopener noreferrer" class="btn-canva-link">
-                            <span>Ver presentación en Canva</span>
-                            <i data-lucide="external-link"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.canva.com/design/DAHO7sI-Rek/Bd5SrFLWePbwLEfzHbOOrQ/edit" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <span>Ver presentación</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="project-image-wrapper">
+                    <img src="img/proyecto3.png" alt="Vista previa del Plan de Marketing Helados York" class="project-img">
                 </div>
             </article>
 
@@ -193,22 +100,17 @@
 
     </main>
 
-    <!-- Script para renderizar los íconos de Lucide e interactividad de desplegables -->
+    <!-- Script para renderizar los íconos de Lucide -->
     <script>
-        // Inicializar íconos de Lucide
         lucide.createIcons();
+    </script>
 
-        // Control de los botones desplegables de detalles
-        document.querySelectorAll('.btn-toggle-details').forEach(button => {
-            button.addEventListener('click', () => {
-                const card = button.closest('.gallery-card');
-                const isExpanded = card.classList.toggle('is-expanded');
-                button.setAttribute('aria-expanded', isExpanded);
-                const textSpan = button.querySelector('span');
-                if (textSpan) {
-                    textSpan.textContent = isExpanded ? 'Ocultar detalles' : 'Ver más detalles';
-                }
-            });
+    <!-- Librería de animaciones AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
         });
     </script>
 </body>

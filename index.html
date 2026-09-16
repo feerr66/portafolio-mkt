@@ -14,6 +14,9 @@
     <!-- Íconos vectoriales modernos (Lucide Icons) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Librería de animaciones AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
     <!-- Hoja de estilos CSS compartida -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -21,7 +24,7 @@
 <body>
 
     <!-- CAJA PRINCIPAL: Tarjeta de presentación centrada -->
-    <main class="card card-home">
+    <main class="card card-home" data-aos="fade-up">
 
         <!-- 1. NAVEGACIÓN SUPERIOR COMÚN -->
         <nav class="nav-menu">
@@ -33,7 +36,7 @@
         </nav>
 
         <!-- 2. FOTO DE PERFIL / AVATAR -->
-        <div class="avatar-wrapper">
+        <div class="avatar-wrapper" data-aos="zoom-in" data-aos-delay="100">
             <img src="img/avatar.png.png" alt="Foto de perfil de Fernanda Ubeda" class="avatar-img">
         </div>
 
@@ -51,7 +54,7 @@
         </p>
 
         <!-- 6. BOTONES DE REDES SOCIALES -->
-        <div class="social-buttons">
+        <div class="social-buttons" data-aos="fade-up" data-aos-delay="200">
             <a href="https://www.instagram.com/ffeerr05" target="_blank" class="btn-social">
                 <i data-lucide="instagram"></i>
                 <span>Instagram</span>
@@ -72,6 +75,15 @@
     <!-- Script para renderizar los íconos de Lucide -->
     <script>
         lucide.createIcons();
+    </script>
+
+    <!-- Librería de animaciones AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
     </script>
 </body>
 

@@ -14,6 +14,9 @@
     <!-- Íconos vectoriales modernos (Lucide Icons) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Librería de animaciones AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
     <!-- Hoja de estilos CSS compartida -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -21,7 +24,7 @@
 <body>
 
     <!-- CAJA PRINCIPAL: Tarjeta blanca para la sección de Contacto -->
-    <main class="card card-contact">
+    <main class="card card-contact" data-aos="fade-up">
 
         <!-- 1. NAVEGACIÓN SUPERIOR COMÚN -->
         <nav class="nav-menu">
@@ -36,7 +39,7 @@
         <div class="contact-layout">
 
             <!-- COLUMNA IZQUIERDA: Encabezado y Formulario -->
-            <div class="contact-left">
+            <div class="contact-left" data-aos="fade-up" data-aos-delay="100">
                 <header class="projects-header">
                     <h1 class="projects-title">Contacto</h1>
                     <div class="projects-title-bar"></div>
@@ -73,18 +76,19 @@
 
             <!-- COLUMNA DERECHA: Ilustración y Tarjeta de correo directo -->
             <div class="contact-right">
-                <div class="contact-illustration">
+                <div class="contact-illustration" data-aos="zoom-in" data-aos-delay="200">
                     <img src="img/contacto.png" alt="Ilustración 3D de sobre con carta y avión de papel"
                         class="contact-img">
                 </div>
 
-                <div class="contact-card-box">
+                <div class="contact-card-box" data-aos="fade-up" data-aos-delay="300">
                     <div class="contact-card-icon">
                         <i data-lucide="mail"></i>
                     </div>
                     <div class="contact-card-text">
                         <p class="contact-card-title">También puedes escribirme a</p>
-                        <a href="mailto:fernandabelen1980@gmail.com" class="contact-card-email">fernandabelen1980@gmail.com</a>
+                        <a href="mailto:fernandabelen1980@gmail.com"
+                            class="contact-card-email">fernandabelen1980@gmail.com</a>
                         <p class="contact-card-note">Responderé a la brevedad posible.</p>
                     </div>
                 </div>
@@ -97,6 +101,15 @@
     <!-- Script para renderizar los íconos de Lucide -->
     <script>
         lucide.createIcons();
+    </script>
+
+    <!-- Librería de animaciones AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
     </script>
 </body>
 
