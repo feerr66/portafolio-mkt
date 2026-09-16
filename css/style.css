@@ -2,31 +2,31 @@
    1. VARIABLES DE COLOR (Paleta sutil en tonos azules y neutros)
    ========================================================== */
 :root {
-    --bg-page: linear-gradient(135deg, #93c5fd 0%, #3b82f6 45%, #1d4ed8 75%, #0f172a 100%);
-    /* Degradado suave y moderno: celeste -> azul -> azul marino */
+    --bg-page: linear-gradient(135deg, #f7f1e5 0%, #e6d2b5 30%, #a47148 70%, #4e2f1d 100%);
+    /* Degradado suave y moderno: beige -> café clarito -> café */
     --bg-card: rgba(255, 255, 255, 0.95);
     /* Fondo blanco traslúcido para legibilidad perfecta */
 
-    --primary: #5252dc;
-    /* Azul/violeta sutil principal */
-    --primary-hover: #4338ca;
-    /* Azul más intenso al pasar el cursor */
-    --primary-light: #eef2ff;
-    /* Fondo azul muy clarito */
+    --primary: #8c532b;
+    /* Café cálido elegante principal */
+    --primary-hover: #633314;
+    /* Café más intenso al pasar el cursor */
+    --primary-light: #fbf6f0;
+    /* Fondo beige muy clarito */
 
-    --text-title: #0f172a;
-    /* Azul marino muy oscuro para títulos */
-    --text-body: #475569;
-    /* Gris azulado para textos */
-    --text-muted: #64748b;
-    /* Gris suave para subtítulos */
+    --text-title: #2b1810;
+    /* Café espresso muy oscuro para títulos y destacados */
+    --text-body: #4a382e;
+    /* Café oscuro para textos y párrafos */
+    --text-muted: #7c6558;
+    /* Café suave para subtítulos */
 
-    --border-color: #e2e8f0;
-    /* Bordes y divisores sutiles */
-    --border-hover: #cbd5e1;
+    --border-color: #e7ded5;
+    /* Bordes y divisores cálidos */
+    --border-hover: #cebead;
     /* Bordes en hover */
 
-    --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.05);
+    --shadow-card: 0 20px 45px rgba(58, 36, 20, 0.12), 0 4px 12px rgba(58, 36, 20, 0.05);
 }
 
 /* ==========================================================
@@ -124,7 +124,7 @@ body {
     margin: 0 auto 22px auto;
     border-radius: 50%;
     padding: 5px;
-    background: linear-gradient(180deg, #e0e7ff 0%, #e2e8f0 100%);
+    background: linear-gradient(180deg, #ede0d4 0%, #ddcdbe 100%);
 }
 
 .avatar-img {
@@ -201,7 +201,7 @@ body {
     border-color: var(--primary);
     background-color: var(--primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(82, 82, 220, 0.12);
+    box-shadow: 0 4px 12px rgba(140, 83, 43, 0.16);
 }
 
 /* ==========================================================
@@ -306,7 +306,7 @@ body {
     border-radius: 16px;
     overflow: hidden;
     flex-shrink: 0;
-    background-color: #f8fafc;
+    background-color: #faf6f1;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
@@ -367,13 +367,13 @@ body {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #94a3b8;
+    color: #a6958a;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3.5px rgba(82, 82, 220, 0.12);
+    box-shadow: 0 0 0 3.5px rgba(140, 83, 43, 0.16);
 }
 
 .btn-submit {
@@ -406,7 +406,7 @@ body {
 .btn-submit:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(82, 82, 220, 0.25);
+    box-shadow: 0 6px 16px rgba(140, 83, 43, 0.28);
 }
 
 /* Columna derecha: Ilustración y Caja de Correo */
@@ -435,8 +435,8 @@ body {
 
 .contact-card-box {
     width: 100%;
-    background-color: #f6f8fd;
-    border: 1px solid #e7edf8;
+    background-color: #faf6f1;
+    border: 1px solid #eee4da;
     border-radius: 16px;
     padding: 18px 20px;
     display: flex;
@@ -448,7 +448,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #e6edff;
+    background-color: #f3e9de;
     color: var(--primary);
     display: flex;
     align-items: center;
@@ -490,7 +490,7 @@ body {
 
 .contact-card-note {
     font-size: 12px;
-    color: #94a3b8;
+    color: #8c776b;
     margin: 0;
 }
 
