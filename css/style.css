@@ -167,7 +167,8 @@ body {
 .social-buttons {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    width: 100%;
     max-width: 320px;
     margin: 0 auto;
 }
@@ -178,30 +179,53 @@ body {
     justify-content: center;
     gap: 12px;
     text-decoration: none;
-    background-color: #ffffff;
-    border: 1.5px solid var(--border-color);
-    border-radius: 12px;
-    padding: 12px 20px;
-    color: var(--text-title);
+    background: linear-gradient(135deg, #dfc7af 0%, #9a6238 45%, #522d15 100%);
+    border: none;
+    border-radius: 14px;
+    padding: 13px 24px;
+    color: #ffffff;
     font-size: 15px;
     font-weight: 600;
-    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+    box-shadow: 0 8px 20px rgba(82, 45, 21, 0.22), 0 2px 6px rgba(82, 45, 21, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.btn-social span {
+    color: #ffffff;
+}
+
+.btn-social i,
+.btn-social svg.lucide {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 2px;
+    flex-shrink: 0;
+}
+
+.btn-social svg.icon-social {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    fill: #ffffff;
+    flex-shrink: 0;
 }
 
 .btn-social i,
 .btn-social svg {
     width: 20px;
     height: 20px;
-    color: var(--primary);
-    fill: currentColor;
+    color: #ffffff;
     flex-shrink: 0;
 }
 
 .btn-social:hover {
-    border-color: var(--primary);
-    background-color: var(--primary-light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(140, 83, 43, 0.16);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(82, 45, 21, 0.34), 0 4px 10px rgba(82, 45, 21, 0.18);
+    filter: brightness(1.05);
 }
 
 /* ==========================================================
